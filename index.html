@@ -22,7 +22,9 @@
     var y2 = 0; //вертикальні right top строки
     var y3 = 0; //вертикальні left bottom строки
     var y4 = 0; //вертикальні right bottom строки
-    var z; //наявність нижньої лінії
+    var z; //наявність середньої лінії
+
+    var dictionary = [];
 	function readFile (evt) {
        var files = evt.target.files;
        var file = files[0];           
@@ -40,7 +42,13 @@
 			x += 1;
 		}
 
-
+		
+		for (var j = 0; j < 6; j++) {
+			for ( var k = 0; k < 4; k++ ){
+				var lol;
+			}
+		}
+		
 		if (parseInt(split[0][1]) == 0) {
 			x += 1;
 		}
@@ -49,6 +57,7 @@
 			x += 1;
 		}
 
+		
 		if (parseInt(split[1][0]) == 0) {
 			y1 += 1;
 		}
@@ -65,45 +74,107 @@
 			y4 += 1;
 		} 
 
-		if ( x == 2 && y1 == 1 && y2 == 1 && y3 == 1 && y4 == 1 && z == 0 ) {
-			alert('це zero ало');
+
+		dictionary = [
+			{
+				x : 2,
+				y1 : 1,
+				y2 : 1,
+				y3 : 1,
+				y4 : 1,
+				z: 0
+			},
+
+			{
+				x : 0,
+				y1 : 0,
+				y2 : 1,
+				y3 : 0,
+				y4 : 1,
+				z : 0
+			},
+
+			{
+				x: 3,
+				y1: 0,
+				y2: 1,
+				y3: 1,
+				y4: 0,
+				z: 1
+			},
+
+			{
+				x: 3,
+				y1: 0,
+				y2: 1,
+				y3: 0,
+				y4: 1,
+				z : 1
+			},
+
+			{
+				x: 1,
+				y1: 1,
+				y2: 1,
+				y3: 0,
+				y4: 1,
+				z: 1
+			},
+
+			{
+				x: 3,
+				y1: 1,
+				y2: 0,
+				y3: 0,
+				y4: 1,
+				z : 1
+			},
+
+			{
+				x: 3,
+				y1 :1,
+				y2 :0,
+				y3 :1,
+				y4 :1,
+				z :1
+			},
+
+			{
+				x: 1,
+				y1: 1,
+				y2: 1,
+				y3: 0,
+				y4: 1,
+				z: 0,
+			},
+
+			{
+				x: 3,
+				y1: 1,
+				y2: 1,
+				y3: 1,
+				y4: 1,
+				 z: 1
+			},
+
+			{
+				x: 3,
+				y1: 1,
+				y2: 1,
+				y3: 0,
+				y4: 1,
+				z: 1,
+			}
+		];
+
+
+		for ( var i = 0; i < dictionary.length; i++ ) {
+			if ( dictionary[i]['x'] == x && dictionary[i]['y1'] == y1 && dictionary[i]['y2'] == y2 && dictionary[i]['y3'] == y3 && dictionary[i]['y4'] == y4 && dictionary[i]['z'] == z) {
+				alert(i);
+			}
 		}
 
-		if ( x == 0 && y1 == 0 && y2 == 1 && y3 == 0 && y4 == 1 && z == 0 ) {
-			alert('це one ало');
-		}
-
-		if ( x == 3 && y1 == 0 && y2 == 1 && y3 == 1 && y4 == 0 && z == 1 ) {
-			alert('це two ало');
-		}
-
-		if ( x == 3 && y1 == 0 && y2 == 1 && y3 == 0 && y4 == 1 && z == 1 ) {
-			alert('це three ало');
-		}
-
-		if ( x == 1 && y1 == 1 && y2 == 1 && y3 == 0 && y4 == 1 && z == 1 ) {
-			alert('це four ало');
-		}
-
-		if ( x == 3 && y1 == 1 && y2 == 0 && y3 == 0 && y4 == 1 && z == 1 ) {
-			alert('це five ало');
-		}
-
-		if ( x == 3 && y1 == 1 && y2 == 0 && y3 == 1 && y4 == 1 && z == 1 ) {
-			alert('це six ало');
-		}
-
-		if ( x == 1 && y1 == 1 && y2 == 1 && y3 == 0 && y4 == 1 && z == 0 ) {
-			alert('це siven ало');
-		}
-
-		if ( x == 3 && y1 == 1 && y2 == 1 && y3 == 1 && y4 == 1 && z == 1 ) {
-			alert('це eight ало');
-		}
-
-		if ( x == 3 && y1 == 1 && y2 == 1 && y3 == 0 && y4 == 1 && z == 1 ) {
-			alert('це nine ало');
-		}
+		
 
 
 
